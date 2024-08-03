@@ -13,3 +13,4 @@ app = Client(
     api_hash=API_HASH,
     plugins=dict(root="plugins")
 )
+app.run()
