@@ -1,17 +1,4 @@
-# Don't Remove Credit Tg - @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
-# Ask Doubt on telegram @KingVJ01
 
-
-import re
-from os import environ
-
-id_pattern = re.compile(r'^.\d+$')
-
-AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('-1002190822875', '').split()] # give channel id with seperate space. Ex : ('-10073828 -102782829 -1007282828')
-
-
-# force subscribe main code :-
 from config import AUTH_CHANNEL
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import *
