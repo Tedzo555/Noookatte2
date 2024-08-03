@@ -1,7 +1,5 @@
 import os
-import time
 from pyrogram import Client, filters
-import random
 import asyncio
 API_ID = '15453419'
 API_HASH = '6c9c9e5a2e65daf192e7dd9dde026f45'
