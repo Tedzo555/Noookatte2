@@ -3,7 +3,6 @@
 # Ask Doubt on telegram @KingVJ01
 
 
-# info.py / config.py / vars.py file..
 import re
 from os import environ
 
@@ -13,7 +12,7 @@ AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('
 
 
 # force subscribe main code :-
-from info import AUTH_CHANNEL
+from config import AUTH_CHANNEL
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import *
 
