@@ -1,7 +1,9 @@
 from pyrogram import Client, filters
-from config import AUTH_CHANNEL
+from config import AUTH_CHANNEL, PICS
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import *
+
+START_TXT = """<b>Hᴇʟʟᴏ {},ᴍʏ ɴᴀᴍᴇ {}⚡\nɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱᴛᴏʀᴇ ʙᴏᴛ...!\nɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!\nᴘᴏᴡᴇʀᴇᴅ ʙʏ - @tedzo01</b>"""
 
 async def is_subscribed(bot, query, channel):
     btn = []
@@ -30,3 +32,21 @@ async def start_message(bot, message):
                 return
         except Exception as e:
             print(e)
+            buttons = [[
+            InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ •', url='https://t.me/SA_Bots')
+            ],[
+            InlineKeyboardButton('• ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ', url='https://t.me/+ohjofBYY5KljZTdl'),
+            InlineKeyboardButton('ᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ •', url='https://t.me/+RJ5z0YIRewsxYWNl')
+            ],[
+            InlineKeyboardButton('• ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ •', callback_data='clone')
+            ],[
+            InlineKeyboardButton('• ʜᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton('ᴀʙᴏᴜᴛ •', callback_data='about')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        me2 = (await client.get_me()).mention
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=START_TXT.format(message.from_user.mention, me2),
+            reply_markup=reply_markup
+)
