@@ -1,4 +1,5 @@
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
+import random
 from config import AUTH_CHANNEL, PICS
 from pyrogram.types import *
 from pyrogram.errors import *
