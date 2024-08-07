@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from config import AUTH_CHANNEL, PICS
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import *
 from pyrogram.errors import *
 
 START_TXT = """<b>Hᴇʟʟᴏ {},ᴍʏ ɴᴀᴍᴇ {}⚡\nɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱᴛᴏʀᴇ ʙᴏᴛ...!\nɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!\nᴘᴏᴡᴇʀᴇᴅ ʙʏ - @tedzo01</b>"""
@@ -38,10 +38,10 @@ async def start_message(bot, message):
             InlineKeyboardButton('• ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ', url='https://t.me/+ohjofBYY5KljZTdl'),
             InlineKeyboardButton('ᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ •', url='https://t.me/+RJ5z0YIRewsxYWNl')
             ],[
-            InlineKeyboardButton('• ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ •', callback_data='clone')
+            InlineKeyboardButton('• ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ •', url='https://t.me/+ohjofBYY5KljZTdl')
             ],[
-            InlineKeyboardButton('• ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ •', callback_data='about')
+            InlineKeyboardButton('• ʜᴇʟᴘ', url='https://t.me/+ohjofBYY5KljZTdl'),
+            InlineKeyboardButton('ᴀʙᴏᴜᴛ •', url='https://t.me/+ohjofBYY5KljZTdl')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         me2 = (await client.get_me()).mention
