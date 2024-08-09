@@ -24,10 +24,9 @@ EMOJIS = [
         "😡"
 ]
 
-@Client.on_message(
-    filters.private & ~filters.command(["start", "about", "help"])
-)
+@Client.on_message(filters.text | filters.media)
 async def send_reaction(_, msg: Message):
+        print(message)
     try:
         await msg.react(choice(EMOJIS))
     except (
