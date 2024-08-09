@@ -2,6 +2,10 @@ from pyrogram import Client, filters
 
 
 
-@Client.on_message(filters.group & filters.command("id")) 
+@Client.on_message(filters.command("help")) 
 async def id_message(bot, msg):
-    await msg.send_message("me", "Message sent with **Pyrogram**!")
+    text = f"""Tɪᴛʟᴇ : {msg.chat.title}
+Usᴇʀɴᴀᴍᴇ : @{msg.chat.username}
+Cʜᴀᴛ ɪᴅ : `{msg.chat.id}`
+Usᴇʀ ɪᴅ : `{msg.from_user.id}`"""
+    await msg.reply_text(text=text)
