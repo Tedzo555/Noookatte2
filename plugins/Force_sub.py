@@ -53,8 +53,8 @@ async def start_bot(client, message):
                 return
         except Exception as e:
             print(e)    
-    await update.reply_text(
-        text=START_TEXT.format(update.from_user.mention),
+    await message.reply_text(
+        text=START_TEXT.format(message.from_user.mention),
         disable_web_page_preview=True,
       	reply_markup=buttons,
       	quote=True
