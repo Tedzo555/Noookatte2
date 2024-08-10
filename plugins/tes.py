@@ -14,12 +14,12 @@ buttons = [[
                 InlineKeyboardButton('↖️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ↗️', url=f'http://t.me/tedzo_bot?startgroup=true')
                 ],[
                 InlineKeyboardButton('🧞‍♀️ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-                InlineKeyboardButton('🔍 Gʀᴏᴜᴘ', url=f'https://t.me/{MOVIE_GROUP_USERNAME}')
+                InlineKeyboardButton('🔍 Gʀᴏᴜᴘ', url=f'https://t.me/tedzo01')
                 ],[
                 InlineKeyboardButton('🙆🏻 Hᴇʟᴘ ', callback_data='help'),
-                InlineKeyboardButton('🎁 Hᴇʟᴘ++', callback_data='leech_url_help'),
+                InlineKeyboardButton('🎁 Hᴇʟᴘ++', callback_data='help'),
                 ],[
-                InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='openSettings'),
+                InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='help'),
                 InlineKeyboardButton('♥️ Aʙᴏᴜᴛ', callback_data='about')
                 ],[
                 InlineKeyboardButton('⪦ 𝕄𝕆𝕍𝕀𝔼 ℂℍ𝔸ℕℕ𝔼𝕃 ⪧', url='https://t.me/real_MoviesAdda3')
