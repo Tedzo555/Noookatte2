@@ -9,7 +9,7 @@ I am a usless Bot**
 >> `I can generate text to QR Code with QR Code decode to text support.`"""
 
 buttons = [[
-                InlineKeyboardButton('↖️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ↗️', url=f'http://t.me/{username}?startgroup=true')
+                InlineKeyboardButton('↖️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ↗️', url=f'http://t.me/tedzo_bot?startgroup=true')
                 ],[
                 InlineKeyboardButton('🧞‍♀️ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
                 InlineKeyboardButton('🔍 Gʀᴏᴜᴘ', url=f'https://t.me/tedzomovie01')
