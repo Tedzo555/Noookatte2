@@ -38,7 +38,7 @@ async def is_subscribed(bot, query, channel):
     return btn
 
 @Client.on_message(filters.private & filters.command(["start"]))
-async def start_bot(client, message):
+async def start(client, message):
     
     if AUTH_CHANNEL:
         try:
