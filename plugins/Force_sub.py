@@ -1,7 +1,29 @@
 from pyrogram import Client, filters
 from config import AUTH_CHANNEL
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import *
 from pyrogram.errors import *
+
+START_TEXT = """**Hello {} 😌
+I am a usless Bot**
+
+>> `I can generate text to QR Code with QR Code decode to text support.`"""
+
+buttons = [[
+                InlineKeyboardButton('↖️ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘs ↗️', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ],[
+                InlineKeyboardButton('🧞‍♀️ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
+                InlineKeyboardButton('🔍 Gʀᴏᴜᴘ', url=f'https://t.me/{MOVIE_GROUP_USERNAME}')
+                ],[
+                InlineKeyboardButton('🙆🏻 Hᴇʟᴘ ', callback_data='help'),
+                InlineKeyboardButton('🎁 Hᴇʟᴘ++', callback_data='leech_url_help'),
+                ],[
+                InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='openSettings'),
+                InlineKeyboardButton('♥️ Aʙᴏᴜᴛ', callback_data='about')
+                ],[
+                InlineKeyboardButton('⪦ 𝕄𝕆𝕍𝕀𝔼 ℂℍ𝔸ℕℕ𝔼𝕃 ⪧', url='https://t.me/real_MoviesAdda3')
+                ],[
+                InlineKeyboardButton('🎉 Learn BOT making 🎊', url="https://youtube.com/@LazyDeveloperr")
+                ]]
 
 async def is_subscribed(bot, query, channel):
     btn = []
@@ -15,8 +37,9 @@ async def is_subscribed(bot, query, channel):
             pass
     return btn
 
-@Client.on_message(filters.command("start")) 
-async def start_message(bot, message):
+@Client.on_message(filters.private & filters.command(["start"]))
+async def start_bot(client, message):
+    
     if AUTH_CHANNEL:
         try:
             btn = await is_subscribed(client, message, AUTH_CHANNEL)
@@ -29,4 +52,10 @@ async def start_message(bot, message):
                 await message.reply_text(text=f"<b>👋 Hello {message.from_user.mention},\n\nPlease join the channel then click on try again button. 😇</b>", reply_markup=InlineKeyboardMarkup(btn))
                 return
         except Exception as e:
-            print(e)
+            print(e)    
+    await update.reply_text(
+        text=START_TEXT.format(update.from_user.mention),
+        disable_web_page_preview=True,
+      	reply_markup=buttons,
+      	quote=True
+                )
