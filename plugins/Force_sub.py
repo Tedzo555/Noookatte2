@@ -3,7 +3,7 @@ from config import AUTH_CHANNEL
 from pyrogram.errors import *
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
-START_TEXT = """**Hello {} 😌
+START_TEXT = """**Hello {message.from_user.mention} 😌
 I am a usless Bot**
 
 >> `I can generate text to QR Code with QR Code decode to text support.`"""
@@ -68,7 +68,7 @@ async def start(client, message):
                 ],[
                 InlineKeyboardButton('🎉 Learn BOT making 🎊', url="https://youtube.com/@mrbeast")
                 ]])
-        await message.reply_text(text=START_TXT.format(user.mention), reply_markup=button, disable_web_page_preview=True)
+        await message.reply_text(text=START_TXT, reply_markup=button, disable_web_page_preview=True)
 
 
 @Client.on_callback_query()
